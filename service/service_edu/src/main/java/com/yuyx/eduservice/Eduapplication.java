@@ -7,11 +7,13 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication//启动类
 @ComponentScan(basePackages = {"com.yuyx.servicebase"})
 public class Eduapplication {
+    String string;
 
 
 
     public static void main(String[] args) {
         SpringApplication.run(Eduapplication.class, args);
+
     }
 
 }
