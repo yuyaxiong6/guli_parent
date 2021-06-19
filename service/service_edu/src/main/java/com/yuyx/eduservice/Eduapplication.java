@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication//启动类
-@ComponentScan(basePackages = {"com.yuyx.servicebase"})
+@ComponentScan(basePackages = {"com.yuyx"})
 public class Eduapplication {
     String string;
 

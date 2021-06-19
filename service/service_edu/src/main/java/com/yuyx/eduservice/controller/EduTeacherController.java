@@ -3,6 +3,8 @@ package com.yuyx.eduservice.controller;
 
 import com.yuyx.eduservice.entity.EduTeacher;
 import com.yuyx.eduservice.service.EduTeacherService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,9 +34,13 @@ public class EduTeacherController {
         List<EduTeacher> list = eduTeacherService.list(null);
         return list;
     }
+
+    @ApiOperation("逻辑删除老师")
     //2.逻辑删除讲师表
     @DeleteMapping("{id}")
-    private  boolean removeTeacher(@PathVariable String id){
+    private  boolean removeTeacher(
+            @ApiParam(name = "id", value = "讲师ID", required = true)
+            @PathVariable String id){
 
         boolean flag = eduTeacherService.removeById(id);
         return  flag;
