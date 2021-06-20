@@ -1,4 +1,5 @@
-import com.yuyx.commonutils.ResultCode;
+package com.yuyx.commonutils;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

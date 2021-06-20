@@ -1,6 +1,7 @@
 package com.yuyx.eduservice.controller;
 
 
+import com.yuyx.commonutils.R;
 import com.yuyx.eduservice.entity.EduTeacher;
 import com.yuyx.eduservice.service.EduTeacherService;
 import io.swagger.annotations.ApiOperation;
@@ -28,22 +29,26 @@ public class EduTeacherController {
     private EduTeacherService eduTeacherService;
     //1 查询讲师表所有得信息
     //
-    @GetMapping("findAll")
-    public List<EduTeacher> findAllteacher (){
-        //调用services;
-        List<EduTeacher> list = eduTeacherService.list(null);
-        return list;
+    @ApiOperation(value="所有讲师列表")@GetMapping
+    public R list(){
+        List<EduTeacher> list= eduTeacherService.list(null);
+        return R.ok().data("items",list);
     }
 
     @ApiOperation("逻辑删除老师")
     //2.逻辑删除讲师表
     @DeleteMapping("{id}")
-    private  boolean removeTeacher(
+    private  R removeTeacher(
             @ApiParam(name = "id", value = "讲师ID", required = true)
             @PathVariable String id){
 
         boolean flag = eduTeacherService.removeById(id);
-        return  flag;
+        if(flag){
+            return R.ok();
+        }
+        else {
+            return  R.error();
+        }
     }
 }
 
