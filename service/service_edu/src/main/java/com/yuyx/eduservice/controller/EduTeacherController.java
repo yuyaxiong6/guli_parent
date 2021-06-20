@@ -45,7 +45,7 @@ public class EduTeacherController {
         boolean flag = eduTeacherService.removeById(id);
         if(flag){
             return R.ok();
-            ///////
+            ////////
         }
         else {
             return  R.error();
