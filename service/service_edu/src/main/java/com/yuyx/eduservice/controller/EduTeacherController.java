@@ -1,6 +1,7 @@
 package com.yuyx.eduservice.controller;
 
 
+import com.yuyx.commonutils.R;
 import com.yuyx.eduservice.entity.EduTeacher;
 import com.yuyx.eduservice.service.EduTeacherService;
 import io.swagger.annotations.ApiOperation;
@@ -29,7 +30,7 @@ public class EduTeacherController {
     //1 查询讲师表所有得信息
     //
     @GetMapping("findAll")
-    public List<EduTeacher> findAllteacher (){
+    public R findAllteacher (){
         //调用services;
         List<EduTeacher> list = eduTeacherService.list(null);
         return list;
@@ -44,7 +45,7 @@ public class EduTeacherController {
 
         boolean flag = eduTeacherService.removeById(id);
         return  flag;
-        //
+        ///
     }
 }
 
