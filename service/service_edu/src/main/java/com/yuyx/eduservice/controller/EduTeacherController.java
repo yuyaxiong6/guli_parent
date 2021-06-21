@@ -5,7 +5,6 @@ import com.yuyx.eduservice.entity.EduTeacher;
 import com.yuyx.eduservice.service.EduTeacherService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,14 +44,6 @@ public class EduTeacherController {
 
         boolean flag = eduTeacherService.removeById(id);
         return  flag;
-        ///////
     }
-
-
-
-
-
-
-    }
-
+}
 
