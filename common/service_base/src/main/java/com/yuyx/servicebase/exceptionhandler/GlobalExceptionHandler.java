@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
         public R error(ArithmeticException e){
             e.printStackTrace();
             return R.error().message("执行了ArithmeticException异常处理..");
+            //
         }
  }
 
