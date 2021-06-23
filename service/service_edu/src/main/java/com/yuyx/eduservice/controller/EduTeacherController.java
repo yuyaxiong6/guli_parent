@@ -130,7 +130,7 @@ public class EduTeacherController {
         eduTeacherService.updateById(teacher);
          return R.ok();
          }
-         //
+         //z
 
 
 }
